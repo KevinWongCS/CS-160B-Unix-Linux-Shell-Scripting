@@ -1,0 +1,5 @@
+# Name: kevin wong
+# File: quotes.txt
+# Desc: Output from quotes.sh
+
+The CCSF library will present Conan O'Brien reading from Leonard Cohen's novel "Beautiful Losers." No, not the Conan O'Brien you may want to see - it's our very own resident poet and wordsmith, Professor Conan O'Brien of the CCSF English Department!

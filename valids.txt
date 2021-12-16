@@ -1,0 +1,5 @@
+# Name: Kevin wong
+# File: valids.txt
+# Desc: Valid variable names
+
+Valid variable names are: XxXxXx, _, 12345, HOMEDIR, _date, file_name, x0-9, and file1

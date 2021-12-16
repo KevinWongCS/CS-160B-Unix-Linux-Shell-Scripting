@@ -1,0 +1,15 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: valid
+# Date: Wed Nov 17 09:42:37 PST 2021
+# Desc: passed a argument representing a file name and returns "yes" if it is a valid file name
+
+# note: The name of a variable can contain only letters (a to z or A to Z), numbers ( 0 to 9) or underscore (_)
+
+# \"yes\" means valid file name, \"no\" means in-valid file name"
+if [ $(echo "$1" | grep "[^0-9a-zA-Z_]") ]
+then 
+	echo "no"
+else
+	echo "yes"	
+fi

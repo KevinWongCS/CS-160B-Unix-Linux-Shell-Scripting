@@ -1,0 +1,36 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: onlinetime
+# Date: Sat Nov 20 12:27:23 PST 2021 
+# Desc: prints the online time for a user from who command onlinetime(user)
+
+# get user
+user=$(who | grep $1 | head -1 | tr -s ' ' ' '  | cut -d' ' -f1)
+
+# returns the hour and minutes logged in
+hour=$(who | grep $user | tr -s ' ' ' ' | head -1 | cut -d' ' -f5 | cut -c1-2)
+minute=$(who | grep $user | tr -s ' ' ' ' | head -1 | cut -d' ' -f5 | cut -c4-5)
+
+# adding 0 in front of hour if single digit
+if [ $hour -lt 10 ]
+then
+	hour=$(echo "0$hour")
+fi
+
+# output
+echo 	$(
+        # month and day
+        echo -n "DATE:  $(date +%b) $(date +%d), "
+        # print year
+        echo -n "$(date +%Y) "
+        # prints hours
+        echo -n "TIME: $(date +%H)"
+        # prints minutes
+        echo -n ":$(date +%M)"
+        # prints seconds
+        echo -n ":$(date +%S)"
+	echo "")
+echo "USER: $user"
+echo "TIME ONLINE: $hour hours(s) and $minute minute(s)"
+
+

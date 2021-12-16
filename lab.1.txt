@@ -1,0 +1,109 @@
+TO DO THE QUESTIONS
+1. x* match zero or more "x" characters.
+2. [0-9]\{3\} matches any digit 3 characters long exactly
+3. xx* match one or more "x" characters.
+4. [0-9]\{3,5\} matches any digit from 3 to 5 characters long
+5. x\{1,5\} matches "x" from 1 to 5 characters long
+6. [0-9]\{1,3\},[0-9]\{3\} matches any digit 1 to 3 characters long and then match any digit exactly 3 characters long
+7. x\{5,\} matches x a minimum of 5 times, no upper limit
+8. ^\.. matches "." followed by any character
+9. x\{10\} matches x reoccuring exactly 10 times
+10. [0-9] marches any digit 0 to 9
+11. [A-Za-z_][k-z0-5]* matches any letter (upper or lower) or "_", then matches range k to z or range 0 to 5 one or more occurences
+12. [0-9]* matches digits 0 to 9 zero of more occurences
+13. ^Begin$ matches "Begin", has to start with B and end with n
+14. [0-9][0-9][0-9] matches any 3 characters with digits 1 to 9 
+15. ^..*\1$ matches any starting character, then one of more occurences of any character, then 1 if it's the last character of the line.
+
+TO DO grep, sort, who, and other commands
+1. cat /etc/passwd | wc-l
+	answer was: 9429
+
+2. who | cut -d ' ' -f1 | egrep "^[A-Za-z0-9]{,7}$" | wc -l
+	answer was "1"
+################################################################
+(-3) CORRECTION
+2. who | cut -d ' ' -f1 | egrep "^[A-Za-z0-9]{,7}$" | wc -l
+	answer was "1"
+<<< the question asked for the names of the users, not the number of users. 
+This was a grep and cut exercise.
+###############################################################
+3. cat /etc/passwd | cut -d: -f3 | egrep "^[0-9]{,2}$" | wc -l
+	answer was "24"
+##############################################################
+(-3) CORRECTION
+3. cat /etc/passwd | cut -d: -f3 | egrep "^[0-9]{,2}$" | wc -l
+	answer was "24"
+<<< same problem -- the question asked for user name, not the number of users.
+#############################################################
+
+
+4. cat /etc/passwd | cut -d: -f3 | egrep "^[0-9]{,4}$" | wc -l
+	answer was "424"
+
+5.  ls -l /pub/cis/dputnam/inaugural_speeches/ | tr  -s  ' '   ' ' | cut -d' ' -f5- | sort -nr
+49745 Sep 15 2015 william_henry_harrison_inaugural_address.txt
+32205 Sep 15 2015 william_howard_taft_inaugural_address.txt
+28744 Sep 15 2015 james_knox_polk_inaugural_address.txt
+26370 Sep 15 2015 james_monroe_second_inaugural_address.txt
+26218 Sep 15 2015 benjamin_harrison_inaugural_address.txt
+23985 Sep 15 2015 calvin_coolidge_inaugural_address.txt
+23697 Sep 15 2015 william_mckinley_first_inaugural_address.txt
+23444 Sep 15 2015 martin_van_buren_inaugural_address.txt
+22990 Sep 15 2015 herbert_hoover_inaugural_address.txt
+21049 Sep 15 2015 abraham_lincoln_first_inaugural_address.txt
+20331 Sep 15 2015 warren_g._harding_inaugural_address.txt
+20109 Sep 15 2015 franklin_pierce_inaugural_address.txt
+19923 Sep 15 2015 james_monroe_first_inaugural_address.txt
+17804 Sep 15 2015 james_a._garfield_inaugural_address.txt
+17772 Sep 15 2015 john_quincy_adams_inaugural_address.txt
+16848 Sep 15 2015 james_buchanan_inaugural_address.txt
+14966 Sep 15 2015 rutherford_b._hayes_inaugural_address.txt
+14587 Sep 15 2015 ronald_reagan_second_inaugural_address.txt
+13977 Sep 15 2015 dwight_d._eisenhower_first_inaugural_address.txt
+13906 Sep 15 2015 john_adams_inaugural_address.txt
+13771 Sep 15 2015 ronald_reagan_first_inaugural_address.txt
+13700 Sep 15 2015 harry_s._truman_inaugural_address.txt
+13475 Sep 15 2015 william_mckinley_second_inaugural_address.txt
+13409 Sep 15 2015 barack_obama_first_inaugural_address.txt
+12950 Sep 15 2015 thomas_jefferson_second_inaugural_address.txt
+12537 Sep 15 2015 george_bush_inaugural_address.txt
+12395 Sep 15 2015 grover_cleveland_second_inaugural_address.txt
+12347 Sep 15 2015 barack_obama_second_inaugural_address.txt
+12298 Sep 15 2015 william_jefferson_clinton_second_inaugural_address.txt
+11989 Sep 15 2015 george_w._bush_second_inaugural_address.txt
+11636 Sep 15 2015 richard_milhous_nixon_first_inaugural_address.txt
+10939 Sep 15 2015 franklin_d._roosevelt_first_inaugural_address.txt
+10641 Sep 15 2015 franklin_d._roosevelt_second_inaugural_address.txt
+10185 Sep 15 2015 grover_cleveland_first_inaugural_address.txt
+10169 Sep 15 2015 thomas_jefferson_first_inaugural_address.txt
+10008 Sep 15 2015 richard_milhous_nixon_second_inaugural_address.txt
+9606 Sep 15 2015 woodrow_wilson_first_inaugural_address.txt
+9253 Sep 15 2015 william_jefferson_clinton_first_inaugural_address.txt
+9193 Sep 15 2015 dwight_d._eisenhower_second_inaugural_address.txt
+9107 Sep 15 2015 george_w._bush_first_inaugural_address.txt
+8665 Sep 15 2015 ﻿george_washington_first_inaugural_address.txt
+8431 Sep 15 2015 woodrow_wilson_second_inaugural_address.txt
+8223 Sep 15 2015 lyndon_baines_johnson_inaugural_address.txt
+7773 Sep 15 2015 ulysses_s._grant_second_inaugural_address.txt
+7601 Sep 15 2015 john_f._kennedy_inaugural_address.txt
+7581 Sep 15 2015 franklin_d._roosevelt_third_inaugural_address.txt
+7199 Sep 15 2015 james_madison_second_inaugural_address.txt
+7100 Sep 15 2015 andrew_jackson_second_inaugural_address.txt
+7037 Sep 15 2015 james_madison_first_inaugural_address.txt
+6907 Sep 15 2015 jimmy_carter_inaugural_address.txt
+6856 Sep 15 2015 andrew_jackson_first_inaugural_address.txt
+6639 Sep 15 2015 zachary_taylor_inaugural_address.txt
+6539 Sep 15 2015 ulysses_s._grant_first_inaugural_address.txt
+5609 Sep 15 2015 theodore_roosevelt_inaugural_address.txt
+3970 Sep 15 2015 abraham_lincoln_second_inaugural_address.txt
+3062 Sep 15 2015 franklin_d._roosevelt_fourth_inaugural_address.txt
+835 Sep 15 2015 george_washington_second_inaugural_address.txt
+
+6. cat /etc/passwd | cut -d: -f6- | grep "^/students.*bash$" | wc -l
+	answer: 6399
+#########################################################################
+(-1) <<< you didn't mention the comma
+6. [0-9]\{1,3\},[0-9]\{3\} matches any digit 1 to 3 characters long and then match 
+any digit exactly 3 characters long
+########################################################################

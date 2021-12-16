@@ -1,0 +1,50 @@
+#!/usr/bin/bash
+# Name: kevin wong
+# File: to_hex_color_output.txt
+# Date: Fri Dec  3 02:20:31 PST 2021
+# Desc: creating three CSS hexadecimal colors using to_hex_color
+
+[03:53:02 kwong43@hills ~]$ ./to_hex_color
+Enter 3 color values between 0 and 255: 0 0 0
+
+--------  RUN: 1  -----------------
+Hexadecimal color value
+RGB 0, 0, 0 is: #000000
+
+----------------------------------
+
+Menu:
+Choose an option:
+        1. Go again (y or yes)?
+        2. Quit (q or quit)?
+Please select one of the above: YeS
+Enter 3 color values between 0 and 255: 1 1 1
+
+--------  RUN: 2  -----------------
+Hexadecimal color value
+RGB 1, 1, 1 is: #010101
+
+----------------------------------
+
+Menu:
+Choose an option:
+        1. Go again (y or yes)?
+        2. Quit (q or quit)?
+Please select one of the above: y
+Enter 3 color values between 0 and 255: 255 255 255
+
+--------  RUN: 3  -----------------
+Hexadecimal color value
+RGB 255, 255, 255 is: #FFFFFF
+
+----------------------------------
+
+Menu:
+Choose an option:
+        1. Go again (y or yes)?
+        2. Quit (q or quit)?
+Please select one of the above: qUiT
+Finished!
+[03:53:46 kwong43@hills ~]$
+
+

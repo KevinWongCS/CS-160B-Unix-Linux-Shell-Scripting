@@ -1,0 +1,9 @@
+# !/usr/bin/bash 
+# Name: kevin wong 
+# File: twice
+# Date: Sat Nov 13 00:15:30 PST 2021
+# Desc: doubles integer passed as an argument
+
+echo "# your integer doubled"
+echo "$(($1 * $1))"
+

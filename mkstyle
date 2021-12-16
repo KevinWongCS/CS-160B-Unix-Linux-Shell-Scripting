@@ -1,0 +1,109 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: mkstyle
+# Date: Fri Dec 10 17:13:45 PST 2021 
+# Desc: uses eval and a CSS template to create a "@font-face" CSS stylesheet for any directory containing truetype, opentype, woff, or woff2 format fonts. 
+
+#------------------------------------
+# error message for incorrect usage
+#------------------------------------
+if [ $# -ne 1 ] 
+then
+	echo "Usage mkstyle <directory>"
+	echo ""
+	exit 1
+fi
+
+# path variable
+path=$1 
+
+# cd to directory
+cd $path
+
+# find fonts inside of directory
+font=$(find . -name "*.ttf" -o -name "*.otf" -o -name "*.woff" -o -name "*.woff2")
+
+# default value for WEIGHT and STYLE
+WEIGHT="normal"
+STYLE="normal"
+
+# counter for testing purposes, incremented by 1 after each iteration
+counter=0
+
+# header for style.css
+echo -e '#!/usr/bin/bash \n# Name: kevin wong \n# File: style.css \n# Date: $(date) \n# Desc: css styles sheet for week 8 lab \n\n' > style.css
+
+#----------------------------------------
+# loop for iterating through every font
+#----------------------------------------
+for line in $font
+do
+	# FOR TESTING
+#	echo $counter
+	#----------------------
+	# get and set URL
+	#----------------------
+	i=$line
+	
+#	# testing outputs
+#	echo "line: $line"
+#	echo "i: $i"
+	
+	#-----------------------
+	# get and set FONT_NAME	
+	#-----------------------
+	# removing "/" from the left
+	temp1=${line##*/}
+	
+	# removing .<extension> from the right
+	temp1=${temp1%.*}
+	
+	# assigning result to FONT_NAME
+	FONT_NAME=$temp1	
+	
+#	# testing outputs
+#	echo "font_name: $FONT_NAME"
+
+	#-------------------------
+	# get and set FONT_FORMAT
+	#-------------------------
+	# removing "/" from the left
+        temp2=${line##*.}
+	
+	# FONT_FORMAT final assignment
+	if [ $temp2 = "woff" ]
+	then 	
+		FONT_FORMAT=$temp2
+	elif [ $temp2 = "woff2" ]
+	then
+		FONT_FORMAT=$temp2
+	elif [ $temp2 = "otf" ]
+	then 
+		FONT_FORMAT="opentype"
+	elif [ $temp2 = "ttf" ]
+	then 
+		FONT_FORMAT="truetype"
+	
+	fi
+
+#	# testing outputs
+#	echo "font_format: $FONT_FORMAT"
+	
+	#------------------------------
+	# CSS FONT FACE TEMPLATE
+	#------------------------------
+
+	eval "echo '@font-face { \
+       		font-family: \"$FONT_NAME\"; \
+       		src: url($i) format(\"$FONT_FORMAT\");\
+       		font-weight: $WEIGHT; \
+       		font-style: $STYLE; }'" >> style.css
+	
+	eval "echo -e '\n'" >> style.css
+
+#       # test counter incremented
+        (( counter++ ))
+
+done
+
+

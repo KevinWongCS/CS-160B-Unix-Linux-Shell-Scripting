@@ -1,0 +1,16 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: itsayes
+# Date: Wed Nov 17 13:16:32 PST 2021 
+# Desc: returns exit status true "0" if argument is "yes" and false "1" if argument is no
+
+# $? = 0 for yes's  
+if [ $(echo $1) = 'Yes' -o $(echo $1) = 'yes' -o $(echo $1) = 'YES' -o $(echo $1) = 'y' -o $(echo $1) = 'Y' -o $(echo $1) = 'YEs' -o $(echo $1) = 'yES' -o $(echo $1) = 'yeS' ]
+then 
+	[ 1 -eq 1 ]
+
+# $? = 1 if inputs that aren't yes's
+else
+	[ 1 -ne 1 ]
+
+fi

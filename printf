@@ -1,0 +1,134 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: printf
+# Date: Wed Dec  1 00:36:51 PST 2021 
+# Desc: script for exercises with printf, week 6
+
+echo "------------------------------------------------------------------------------------------"
+echo "# 1. printing integers from 1% to 100%, in 10 right aligned, evenly spaced columns"
+echo "------------------------------------------------------------------------------------------"
+num=1
+while [ $num -le 100 ]
+do
+	printf "%3d%%\t" $num
+	
+	if [ $(($num % 10)) -eq 0 ]
+	then	
+		printf "\n"	
+	fi
+
+	(( num++ ))
+
+done
+
+printf "\n"
+
+echo "-------------------------------------------------------------------------------------------------------"
+echo "# 2. printing integers from 1 to 100 in, in 10 left aligned columns as octal values preceded by 0"
+echo "-------------------------------------------------------------------------------------------------------"
+num=1
+while [ $num -le 100 ]
+do
+        printf "%#o\t" $num
+
+        if [ $(($num % 10)) -eq 0 ]
+        then
+                printf "\n"
+        fi
+
+        (( num++ ))
+
+done
+
+printf "\n"
+
+echo "-------------------------------------------------------------------------------------------------------"
+echo "# 3. printing integers from 0 to 255 as hex values with a prefix of 0x in 8 evenly spaced columns"
+echo "-------------------------------------------------------------------------------------------------------"
+num=1
+while [ $num -le 255 ]
+do
+        printf "%#x\t" $num
+
+        if [ $(($num % 8)) -eq 0 ]
+        then
+                printf "\n"
+        fi
+
+        (( num++ ))
+
+done
+
+printf "\n"
+printf "\n"
+
+echo "-------------------------------------------------------------------------------------------------------"
+echo "# 4. printing the last 100 words of stopwords.txt, left-aligned, in 10 evenly spaced columns"
+echo "-------------------------------------------------------------------------------------------------------"
+counter=1
+
+tail -100 stopwords.txt | while read word
+do
+	printf "%-15s" $word
+
+	if [ $(($counter % 10)) -eq 0 ]
+        then
+       		printf "\n"
+        fi
+
+	((  counter++  ))
+
+done
+
+printf "\n"
+
+echo "------------------------------------------------------------------------------------------------------------"
+echo "# 5. printing the last 100 words of stopwords.txt, converted to UPPERCASE, in 10 evenly spaced columns"
+echo "------------------------------------------------------------------------------------------------------------"
+counter=1
+
+tail -100 stopwords.txt | while read word
+do
+        printf "%-15s" $(echo $word | tr '[a-z]' '[A-Z]')
+
+        if [ $(($counter % 10)) -eq 0 ]
+        then
+                printf "\n"
+        fi
+	
+	(( counter++  ))
+
+done
+
+printf "\n"
+
+
+echo "-------------------------------------------------------------------------------------------------------"
+echo "# 6. printing complicated string as a literal string"
+echo "-------------------------------------------------------------------------------------------------------"
+echo "---------------original output--------------------"
+printf "\"This \nis \na \t\"very\' \"unusual string\n\n\n\n\tthis is the end of it. What a\t\t\nrelief\!\0a"
+printf "\n"
+printf "\n"
+echo "----------output as a literal string--------------"
+printf "%s" "\"\\\"This \nis \na \t\\"\"very\\\'\ \\"\"unusual string\n\n\n\n\tthis is the end of it. What a\t\t\nrelief\!\0a\""
+printf "\n"
+printf "\n"
+
+# echo "or"
+# printf "%s' %s" '"\"This \nis \na \t\"very\' '\"unusual string\n\n\n\n\tthis is the end of it. What a\t\t\nrelief\!\0a"'
+
+echo "-------------------------------------------------------------------------------------------------------"
+echo "# 7. print the string below explicitly the backslashed characters"
+echo "-------------------------------------------------------------------------------------------------------"
+
+str='\tStarting with a tab\n\t\tand continuing with\n\t\t\tone more tab\n\t\t\t\tindent on each new line!'
+
+echo "-------------------------------original output----------------------------------"
+printf "%s" $str
+printf "\n"
+printf "\n"
+echo "----------output with explicitly enforcing backslashed characters --------------"
+printf "\t%s\n\t\t%s\n\t\t\t%s\n\t\t\t\t%s" "Starting with a tab" "and continuing with" "one more tab" "indent on each new line!"
+printf "\n"
+printf "\n"

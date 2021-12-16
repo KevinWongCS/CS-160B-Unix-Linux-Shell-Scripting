@@ -1,0 +1,17 @@
+#!/bin/bash
+# Name: Kevin Wong
+# Date: 11/6/21
+# File: first_names.txt
+# Desc: first names from /users/dputnam/public_html/phonebook.txt
+
+Liz
+Alice
+Barbara
+Liz
+Susan
+Susan
+Tony
+Zippy
+Walter
+Jesse
+Susan

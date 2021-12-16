@@ -1,0 +1,78 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: lab.3.txt
+# Date: Sat Nov 13 00:15:30 PST 2021
+# Desc: selected outputs for assignement week 3
+
+# 1. 5 runs from twice
+# If a non-integer value is passed as an argument we get a syntax error and an error token
+# If no argument is passed we also get a syntax error and an error token
+[12:33:03 kwong43@hills ~]$ ./twice 0
+# your integer doubled
+0
+[12:33:09 kwong43@hills ~]$ ./twice 2
+# your integer doubled
+4
+[12:33:12 kwong43@hills ~]$ ./twice 50
+# your integer doubled
+2500
+[12:33:15 kwong43@hills ~]$ ./twice 90
+# your integer doubled
+8100
+[12:33:26 kwong43@hills ~]$ ./twice 23
+# your integer doubled
+529 
+
+# 2. 5 runs from home
+[01:07:45 kwong43@hills ~]$ ./home dputnam
+# dputnam's home directory
+/users/dputnam
+[01:07:50 kwong43@hills ~]$ ./home kwong43
+# kwong43's home directory
+/students/kwong43
+[01:08:12 kwong43@hills ~]$ ./home jlam81
+# jlam81's home directory
+/students/jlam81
+[01:08:18 kwong43@hills ~]$ ./home rlozano
+# rlozano's home directory
+/students/rlozano
+[01:08:26 kwong43@hills ~]$ ./home amoghtan
+# amoghtan's home directory
+/users/amoghtan 
+
+# 3. suffix executed on 5 files: andy, dwight, jim, micheal, and pam
+[02:36:47 kwong43@hills ~]$ ls -l | grep "^-rw-"
+-rw-------  1 kwong43 students    0 Nov 13 01:38 andy
+-rw-------  1 kwong43 students    0 Nov 13 01:38 dwight
+-rw-------  1 kwong43 students    0 Nov 13 01:38 jim
+-rw-------  1 kwong43 students 1118 Nov 13 01:10 lab.3.txt
+-rw-------  1 kwong43 students    0 Nov 13 01:38 micheal
+-rw-------  1 kwong43 students    0 Nov 13 01:38 pam
+[02:37:04 kwong43@hills ~]$ ./suffix andy .bernard; ./suffix dwight .schrute; ./suffix jim .halpert; ./suffix micheal .scott; ./suffix pam .beesly
+# your file andy has been renamed to andy.bernard
+# your file dwight has been renamed to dwight.schrute
+# your file jim has been renamed to jim.halpert
+# your file micheal has been renamed to micheal.scott
+# your file pam has been renamed to pam.beesly
+[02:38:40 kwong43@hills ~]$ ls -l | grep "^-rw-"
+-rw-------  1 kwong43 students    0 Nov 13 01:38 andy.bernard
+-rw-------  1 kwong43 students    0 Nov 13 01:38 dwight.schrute
+-rw-------  1 kwong43 students    0 Nov 13 01:38 jim.halpert
+-rw-------  1 kwong43 students 1118 Nov 13 01:10 lab.3.txt
+-rw-------  1 kwong43 students    0 Nov 13 01:38 micheal.scott
+-rw-------  1 kwong43 students    0 Nov 13 01:38 pam.beesly
+
+# 4. unsuffix executed on 5 files created above
+[02:42:46 kwong43@hills ~]$ ./unsuffix andy.bernard .bernard; ./unsuffix dwight.schrute .schrute; ./unsuffix jim.halpert .halpert; ./unsuffix micheal.scott .scott; ./unsuffix pam.beesly .beesly
+Your file andy.bernard has been renamed to andy
+Your file dwight.schrute has been renamed to dwight
+Your file jim.halpert has been renamed to jim
+Your file micheal.scott has been renamed to micheal
+Your file pam.beesly has been renamed to pam
+[02:43:50 kwong43@hills ~]$ ls -l | grep "^-rw-"
+-rw-------  1 kwong43 students    0 Nov 13 01:38 andy
+-rw-------  1 kwong43 students    0 Nov 13 01:38 dwight
+-rw-------  1 kwong43 students    0 Nov 13 01:38 jim
+-rw-------  1 kwong43 students 2430 Nov 13 02:42 lab.3.txt
+-rw-------  1 kwong43 students    0 Nov 13 01:38 micheal
+-rw-------  1 kwong43 students    0 Nov 13 01:38 pam

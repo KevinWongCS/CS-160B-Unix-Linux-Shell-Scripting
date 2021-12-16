@@ -1,0 +1,120 @@
+TO DO TREE
+.
+|-- 1
+|   |-- assignment_wk1.sh
+|   |-- create_topsecret.sh
+|   |-- ex.1.txt
+|   `-- exercise_wk1.sh
+|-- 2
+|   |-- assignment_wk2.sh
+|   `-- exercise_wk2.sh
+|-- 3
+|   |-- assignment_wk3.sh
+|   `-- exercise_wk3.sh
+|-- 4
+|   |-- assignment_wk4.sh
+|   `-- exercise_wk4.sh
+|-- 5
+|   |-- assignment_wk5.sh
+|   `-- exercise_wk5.sh
+|-- 6
+|   |-- assignment_wk6.sh
+|   `-- exercise_wk6.sh
+|-- 7
+|   |-- assignment_wk7.sh
+|   `-- exercise_wk7.sh
+`-- 8
+    |-- assignment_wk8.sh
+    `-- exercise_wk8.sh
+
+8 directories, 18 files
+
+TO DO TOP SECRET
+ME: DP
+# DATE: 2021-10-28 Thu
+# FILE: create_topsecret.sh
+# DESC: Create Exercise 1's topsecret directory and files
+# USAGE:
+#   Set the file permissions to 700 so that it is executable.
+#   Run this script in the directory you will be using to contain the
+#   scripts that you create for this course. Decide how you will 
+#   organize eight weeks of assignments.
+#   
+#   Run the script to create the topsecret directory and files. Either:
+#       bash create_topsecret.sh
+#   or
+#       ./create_topsecret.sh
+#######################################################################
+
+echo "Attempting to create the topsecret directory"
+cd ~/cs160b
+mkdir topsecret
+cd topsecret
+# Loop through some file names
+for i in feb96 jan12.02 jan19.02 jan26.02 jan5.02 jan95 jan96 jan97 jan98 mar98 memo1 memo10 memo2 memo2.sv
+do
+    # Echo text to the file name is $i
+    echo Creating the file $i
+    echo "###############################################" > $i
+    # Concatenate the rest of the text
+    echo TOP SECRET CS 160B FILE --- FOR YOUR EYES ONLY: >> $i
+    echo "-----------------------------------------------" >> $i
+    echo This file is named: $i >> $i
+    echo "###############################################" >> $i
+done
+
+TO DO EXERCISES PART 1
+echo * displays all files on a single line
+feb96 jan12.02 jan19.02 jan26.02 jan5.02 jan95 jan96 jan97 jan98 mar98 memo1 memo10 memo2 memo2.sv
+
+echo *[!0-9] don't know what it does
+memo2.sv
+
+echo m[a-df-z]* matches any file that begins with m and next letter is not e
+mar98
+
+echo [A-Z]* returns [A-Z]*
+[A-Z]*
+
+echo jan* returns zero or more occurences of jan
+jan12.02 jan19.02 jan26.02 jan5.02 jan95 jan96 jan97 jan98
+
+echo . returns .
+.
+
+echo ????? returns all files with 5 characters
+feb96 jan95 jan96 jan97 jan98 mar98 memo1 memo2
+
+echo *02 returns all files that when with 02
+jan12.02 jan19.02 jan26.02 jan5.02
+
+echo jan?? feb?? mar?? returns all jan, feb, and mar that end with 2 characters
+jan95 jan96 jan97 jan98 feb96 mar98
+
+echo [fjm][ae][bnr]* returns all files with first letter f,j,or m, second letter a or e, and last letter b, n, or r
+feb96 jan12.02 jan19.02 jan26.02 jan5.02 jan95 jan96 jan97 jan98 mar98
+
+
+TODO EXERCISES PART 2
+ls | wc -l counts the files in directory
+14
+
+rm ??? deletes files that are 3 characters long
+
+who | wc -l counts the people that are currently logged into the hills directory
+0
+
+mv progs/* /users/steve/backup moves everything in progs to backup
+
+ls *.c | wc -l counts the number of files what have one or more occurences of any character following a c
+0
+
+rm *.o deletes files that have one or more occurences of any character followed by an o
+
+who | sort sorts the list of current users who are logged into hills
+
+cd; pwd change directory then display current working directory
+
+cp memo1 .. copy memo1 into any file that has 2 characters?
+
+plotdata 2>errors & don't know what it does

@@ -1,0 +1,103 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: casetimeod
+# Date: Sat Nov 20 09:14:23 PST 2021 
+# Desc: returns time in am pm format using case statement
+
+
+
+case  "$(date | cut -c12-13)" 
+in 
+	# AM TIMES
+	0[0-9])	echo $(# day
+        	echo -n "$(date +%a), "
+        	# month and day
+        	echo -n "$(date +%b) $(date +%d), "
+        	# print year
+        	echo -n "$(date +%Y) "
+        	# prints hours
+        	echo -n $(date +%H)
+       		# prints minutes
+        	echo -n ":$(date +%M)"
+        	# prints seconds
+        	echo -n ":$(date +%S) am"
+        	echo "")
+		;;
+
+        1[0-1]) echo $(# day
+                echo -n "$(date +%a), "
+                # month and day
+                echo -n "$(date +%b) $(date +%d), "
+                # print year
+                echo -n "$(date +%Y) "
+                # prints hours
+                echo -n $(date +%H)
+                # prints minutes
+                echo -n ":$(date +%M)"
+                # prints seconds
+                echo -n ":$(date +%S) am"
+                echo "")
+		;;
+
+	# PM TIMES
+		12)		echo $(# day
+                echo -n "$(date +%a), "
+                # month and day
+                echo -n "$(date +%b) $(date +%d), "
+                # print year
+                echo -n "$(date +%Y) "
+                # prints hours
+                echo -n $(date +%H)
+                # prints minutes
+                echo -n ":$(date +%M)"
+                # prints seconds
+                echo -n ":$(date +%S) pm"
+                echo "")
+		;;
+		
+        1[3-9]) echo $(# day
+                echo -n "$(date +%a), "
+                # month and day
+                echo -n "$(date +%b) $(date +%d), "
+                # print year
+                echo -n "$(date +%Y) "
+                # prints hours
+                echo -n "0$(($(echo $(date +%H)) - 12))"
+                # prints minutes
+                echo -n ":$(date +%M)"
+                # prints seconds
+                echo -n ":$(date +%S) pm"
+                echo "")
+		;;
+
+	2[0-1]) echo $(# day
+                echo -n "$(date +%a), "
+                # month and day
+                echo -n "$(date +%b) $(date +%d), "
+                # print year
+                echo -n "$(date +%Y) "
+                # prints hours
+                echo -n "0$(($(echo $(date +%H)) - 12))"
+                # prints minutes
+                echo -n ":$(date +%M)"
+                # prints seconds
+                echo -n ":$(date +%S) pm"
+                echo "")
+		;;
+        
+        2[2-4]) echo $(# day
+                echo -n "$(date +%a), "
+                # month and day
+                echo -n "$(date +%b) $(date +%d), "
+                # print year
+                echo -n "$(date +%Y) "
+                # prints hours
+                echo -n "$(($(echo $(date +%H)) - 12))"
+                # prints minutes
+                echo -n ":$(date +%M)"
+                # prints seconds
+                echo -n ":$(date +%S) pm"
+                echo "")
+		;;
+
+esac

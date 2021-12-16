@@ -1,0 +1,21 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: mysed
+# Date: Wed Nov 17 13:16:32 PST 2021 
+# Desc: 2 takes two arguments: 1st sed script, 2nd text file. The sed script will remove first 10 lines from 2nd text file.
+
+echo "# testing to see if text file has enough lines"
+echo "# $(cat $2 | wc -l) lines in $2"
+
+./$1 $2
+ 
+if [ $(cat temp | wc -l) -lt $(cat $2 | wc -l) ]
+then 
+	echo "deleting 10 lines from $2"
+	cp temp $2
+else
+	echo "the file has no more lines"
+fi
+
+echo "# updated: $(cat $2 | wc -l) lines in $2"
+echo "# done " 

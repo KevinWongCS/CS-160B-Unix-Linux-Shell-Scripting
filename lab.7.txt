@@ -1,0 +1,75 @@
+# Name: kevin wong
+# File: named lab.7.txt : sourced through .bash_profile
+# Date: Tue Dec  7 21:57:41 PST 2021
+# Desc: outputs for labs week 7
+
+---------------------------------------------
+4. join_with
+---------------------------------------------
+[10:19:05 kwong43@hills ~]$ join_with '..' {1..9}
+Joining parameters with ..
+1..2..3..4..5..6..7..8..9
+
+[10:19:18 kwong43@hills ~]$ join_with '...' {a..z}
+Joining parameters with ...
+a...b...c...d...e...f...g...h...i...j...k...l...m...n...o...p...q...r...s...t...u...v...w...x...y...z
+
+[10:19:32 kwong43@hills ~]$ join_with ',' 1 2 3 4 5
+Joining parameters with ,
+1,2,3,4,5
+
+[10:19:46 kwong43@hills ~]$ join_with '----' 1 2 3 4 5
+Joining parameters with ----
+1----2----3----4----5
+
+[10:20:00 kwong43@hills ~]$
+
+------------------------------------------------
+5. cube
+------------------------------------------------
+[10:20:00 kwong43@hills ~]$ cube 1 2 3 4 5
+cubing 1 2 3 4 5
+     1 cubed:                    1
+     2 cubed:                    8
+     3 cubed:                   27
+     4 cubed:                   64
+     5 cubed:                  125
+
+[10:20:27 kwong43@hills ~]$
+
+[10:27:39 kwong43@hills ~]$ cube
+ERROR: usage: cube arg1 arg2 arg3....
+
+[10:28:57 kwong43@hills ~]$
+
+--------------------------------------------------
+6. chg_case
+--------------------------------------------------
+[10:26:36 kwong43@hills ~]$ echo roger rafael novak | chg_case toupper
+ROGER RAFAEL NOVAK
+
+[10:26:40 kwong43@hills ~]$ echo RogeR RafaeL NovaK | chg_case tolower
+roger rafael novak
+
+[10:27:05 kwong43@hills ~]$ chg_case toupper roger rafael novak
+ROGER RAFAEL NOVAK
+
+[10:27:22 kwong43@hills ~]$ chg_case tolower ROger rafaEL nOVak
+roger rafael novak
+
+[10:27:39 kwong43@hills ~]$
+
+------------------------------------------------
+7. go2
+------------------------------------------------
+[10:38:21 kwong43@hills ~]$ go2 public_html ruby 7
+
+[10:40:14 kwong43@hills 7]$ go2 ~
+
+[10:40:18 kwong43@hills ~]$ go2 public_html python 3
+
+[10:40:27 kwong43@hills 3]$ go2 ~
+
+[10:40:31 kwong43@hills ~]$
+
+

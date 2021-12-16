@@ -1,0 +1,12 @@
+#!/bin/bash
+# Name: Kevin Wong
+# Date: 11/6/21
+# File: uniq_lines.txt
+# Desc: output for uniq_lines.sh
+
+
+# your file has been sorted
+# removing duplicate lines
+# your output is stored in variable "namelist"
+# the below is what was stored inside "namelist"
+Alice Chebba 973-555-2015 Barbara Swingle 201-555-9257 Jesse Pinkman 999-888-5555 Liz Stachiw 212-555-2298 Susan Goldberg 201-555-7776 Susan Topple 212-555-4932 Tony Iannino 973-555-1295 Walter White 123-321-4321 Zippy Pinhead 555-666-7777

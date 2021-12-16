@@ -1,0 +1,7 @@
+# Name: kevin wong
+# File: nf.txt
+# Desc: number of regular files in current directory
+
+# number of regular files in current directory
+/etc
+140

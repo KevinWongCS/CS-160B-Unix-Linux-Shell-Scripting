@@ -1,0 +1,13 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: style.css 
+# Date: $(date) 
+# Desc: css styles sheet for week 8 lab 
+
+
+@font-face {        		font-family: "Inconsolata-Bold";        		src: url(./Inconsolata-Bold.ttf) format("truetype");       		font-weight: normal;        		font-style: normal; }
+
+
+@font-face {        		font-family: "Inconsolata-Regular";        		src: url(./Inconsolata-Regular.ttf) format("truetype");       		font-weight: normal;        		font-style: normal; }
+
+

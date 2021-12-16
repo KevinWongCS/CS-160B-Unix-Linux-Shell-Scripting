@@ -1,0 +1,79 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: timeod
+# Date: Wed Nov 17 13:16:32 PST 2021 
+# Desc: displays time in a.m. p.m. format
+
+hour=$(date | cut -d' ' -f4 | cut -d: -f1)
+
+# handles 0-12 am
+if [ $(date +%H) -lt 12 ]
+then
+	# day
+	echo -n "$(date +%a), "
+	# month and day
+	echo -n "$(date +%b) $(date +%d), "
+        # print year
+        echo -n "$(date +%Y) "
+        # prints hours
+        echo -n $(date +%H)
+        # prints minutes
+        echo -n ":$(date +%M)"
+        # prints seconds
+        echo -n ":$(date +%S) am"
+	echo ""
+
+else
+# handles 12 pm
+	if [ $(echo $(date +%H)) -eq 12 ]
+	then 
+		# day
+		echo -n "$(date +%a), "
+		# month and day
+		echo -n "$(date +%b) $(date +%d), "
+		# print year
+		echo -n "$(date +%Y) "
+		# prints hours
+		echo -n $(date +%H)
+		# prints minutes
+		echo -n ":$(date +%M)"
+		# prints seconds
+		echo -n ":$(date +%S) pm"
+		echo ""
+
+	else
+	# handles 01-09 pm
+		if [ $(echo $(date +%H)) -lt 22 ]
+		then
+			# day
+        	echo -n "$(date +%a), "
+        	# month and day
+        	echo -n "$(date +%b) $(date +%d), "
+			# print year
+			echo -n "$(date +%Y) "
+			# prints hours
+			echo -n "0$(($(echo $(date +%H)) - 12))" 
+			# prints minutes
+			echo -n ":$(date +%M)" 
+			# prints seconds
+			echo -n ":$(date +%S) pm"
+			echo ""
+
+		else
+		# handles 10-12 pm
+			# day
+			echo -n "$(date +%a), "
+			# month and day
+			echo -n "$(date +%b) $(date +%d), "
+			# print year
+			echo -n "$(date +%Y) "
+			# prints hours
+			echo -n "$(($(echo $(date +%H)) - 12))"
+			# prints minutes
+			echo -n ":$(date +%M)"
+			# prints seconds
+			echo -n ":$(date +%S) pm"
+			echo ""
+		fi	
+	fi
+fi

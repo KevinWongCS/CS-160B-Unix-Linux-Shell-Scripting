@@ -1,0 +1,65 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: run_tests
+# Date: Wed Nov 17 13:16:32 PST 2021 
+# Desc: runs script for week 4 exercises: valid(string), timeod, mysed(sed.sh, text file), and itsayes(string)
+
+echo "---------------------------------------------"
+echo "# 1. Running test for valid(string)"
+echo "---------------------------------------------"
+echo "# test 1, argument '\TOPRAMEN'"
+./valid '\TOPRAMEN'
+echo ""
+echo "# test 2, argument 'TOPRAMEN'"
+./valid 'TOPRAMEN'
+echo ""
+echo "# test 3, argument 'T\$OPRAMEN'"
+./valid 'T$OPRAMEN'
+echo ""
+echo "# test 3, argument 'TOP_RAMEN'"
+./valid 'TOP_RAMEN'
+
+
+echo ""
+echo "---------------------------------------------"
+echo "# 2. Running test for timeod()" 
+echo "---------------------------------------------"
+echo "# test 1"
+./timeod
+echo ""
+echo "# test 2"
+./timeod
+echo ""
+
+echo "---------------------------------------------"
+echo "# 3. Running test for mysed(sed.sh, text file)"
+echo "---------------------------------------------"
+echo "# test 1"
+./mysed sed.sh oliver.txt
+echo ""
+echo "# test 2"
+./mysed sed.sh oliver.txt
+echo ""
+
+echo "---------------------------------------------"
+echo "# 4. Running test for itsayes(string)"
+echo "---------------------------------------------"
+echo "# test 1"
+echo "argument: Yes"
+./itsayes Yes; echo $?
+echo "# test 2"
+echo "argument: y"
+./itsayes y; echo $?
+echo "# test 3"
+echo "argument: NO"
+./itsayes NO; echo $?
+echo "# test 4"
+echo "argument: N"
+./itsayes N; echo $?
+echo "# test 5"
+echo "argument: qwertyasdfzxcv"
+./itsayes qwertyasdfzxcv; echo $?
+
+
+echo ""
+echo "done running test"

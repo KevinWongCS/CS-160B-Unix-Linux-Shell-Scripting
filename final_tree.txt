@@ -1,0 +1,25 @@
+# Name: kevin wong
+# file: final_tree.txt
+# desc: final directory structure after use_vars.sh is executed 
+
+users
+`-- pat
+    `-- ruth
+        `-- steve
+            |-- documents
+            |   |-- letters
+            |   |   `-- no.JSK
+            |   |-- memos
+            |   |   |-- dact
+            |   |   `-- plan
+            |   `-- proposals
+            |       |-- AMG.reply
+            |       |-- new.hire
+            |       |-- no.JSK
+            |       `-- sys.A
+            `-- programs
+                |-- collect
+                |-- mon
+                `-- wb
+
+11 directories, 7 files

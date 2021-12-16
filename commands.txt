@@ -1,0 +1,37 @@
+#!/bin/bash
+# Name: Kevin Wong
+# Date: 11/6/21
+# File: commands.txt
+# Desc: collection the commands used for Week 2 Assignment 
+
+# 1. completed week 2 exercises
+# 2. assigning variable "text" to view phonebook.txt
+	text=`cat /users/dputnam/public_html/phonebook.txt`
+
+# 3. Command to Create the first_names.txt
+	$text | tr -d '[0-9]' | tr ' ' '-' | tr -s '-' | tr '-' '\12' | sed '0~2d'
+
+# 4. Removing space characters
+	# using tr	 
+	echo $text | bash tr_strip.sh >> tr_phonebook.txt
+	temp=$(echo $text | bash tr_strip.sh)
+	text=$temp
+	
+	# using sed
+	echo $text | bash sed_strip.sh >> sed_phonebook.txt
+	temp=$(echo $text | bash sed_strip.sh)
+	text=$temp
+
+# 5. Counting characters
+	# note: counts white spaces as characters
+ 	echo $text | wc -c
+	character count: 291
+
+	echo $text | tr -d ' ' | tr -d '-' | tr -d '[0-9]'
+	character count: 127
+
+	# Special characters are counted in "wc -c" function
+
+# 6. Unique lines
+	namelist=$(sort /users/dputnam/public_html/phonebook.txt | uniq)
+	echo $namelist

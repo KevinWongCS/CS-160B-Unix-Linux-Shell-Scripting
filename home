@@ -1,0 +1,8 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: home
+# Date: Sat Nov 13 00:15:30 PST 2021
+# Desc: takes a username and prints the users home directory
+
+echo "# $1's home directory"
+cat /etc/passwd | cut -d: -f6 | grep $1

@@ -1,0 +1,35 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: perm_denied
+# Date: Thu Nov 25 08:48:07 PST 2021 
+# Desc: while loop that runs once every 10 seconds and shuts down after looping 6 times.
+	# each iteration shows the 10 most recent web log "Permission denied" errors created by scripts that belong 
+	# to users with home directories in /students
+	# note: The web server's error log is located at /var/www/logs/ssl_error_log
+
+# varirable
+counter=1
+
+while [ $counter -le 6 ]
+do	
+	# displaying 10 most recent permission denied errors belonging to students
+	echo ""
+	echo "___________________________________"
+	echo "# Iteration #$counter"
+	echo "___________________________________"
+	cat /var/www/logs/ssl_error_log | grep '/students' | head -10
+	echo ""
+	
+	# incrementing counter
+	counter=$(( counter + 1 ))
+	
+	# exit script if 6 iterations of web logs have been printed
+	if [ $counter -gt 6 ]
+	then
+		echo "# Finished"
+		exit 0
+	fi
+	
+	# sleep 
+	sleep 10
+done

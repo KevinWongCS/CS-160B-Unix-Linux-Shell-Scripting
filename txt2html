@@ -1,0 +1,28 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: txt2html
+# Date: Thu Nov 25 10:04:25 PST 2021 
+# Desc: takes any number of .txt files and converts them into HTML files
+	# adds HTML header and footer tags
+
+for textfile in *.txt
+do 
+	echo -e "<html><pre>\n" > temp  
+	
+	cat $textfile >> temp
+
+	echo -e "\n</pre></html>" >> temp
+
+	cp temp ~/public_html/$(echo $(echo "$textfile" | cut -d'.' -f1)).html
+
+done
+
+# SET DIRECTORY PERMISSIONS FOR WEB SERVICE
+chmod 755 ~
+chmod 755 ~/public_html
+
+# SET FILE PERMISSIONS TO READABLE
+chmod 644 ~/public_html/*
+
+echo "# files are viewable @ https://hills.ccsf.edu/~YOURUSERID/YOURHTMLFILE"
+echo ""

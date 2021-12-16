@@ -1,0 +1,10 @@
+#!/usr/bin/bash 
+# Name: kevin wong	
+# File: unsuffix
+# Date: Sat Nov 13 00:15:30 PST 2021
+# Desc: takes a filename and a part of the filename you wish to remove
+
+newName=$(echo "$1" | sed "s/$2//g")
+mv $1 /tmp/$1
+mv /tmp/$1 $newName
+echo "Your file $1 has been renamed to $newName"

@@ -1,0 +1,27 @@
+#!/usr/bin/bash 
+# Name: kevin wong 
+# File: columns
+# Date: Wed Nov 24 15:01:52 PST 2021 
+# Desc: Prints numbers in columns; columns(number of columns, number of items to place into columns (minimal of 100)
+
+
+if [[ $# -ne 2 ]]
+then
+    echo "Usage: ./columns num num"
+    exit 1
+fi 
+
+echo ""
+echo "__________________________"
+echo "$1 columns with $2 numbers"
+echo "__________________________"
+for i in $( eval echo {1..$2})
+do
+        echo -e "$i\t\c"
+
+        if [ $(( $i % $1 )) -eq 0 ]
+        then
+                echo -e "\n"
+        fi
+done
+echo ""

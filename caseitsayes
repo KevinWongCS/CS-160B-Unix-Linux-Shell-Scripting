@@ -1,0 +1,15 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: caseitsayes
+# Date: Sat Nov 20 12:27:23 PST 2021 
+# Desc: returns exit status true "0" if argument is "yes" and false "1" if argument is no using case
+
+case "$1"
+in
+        [yY]) [ 1 -eq 1 ]
+        ;;
+        [yY][eE][sS]) [ 1 -eq 1 ]
+        ;;
+	*) [ 1 -ne 1 ]
+	;;
+esac

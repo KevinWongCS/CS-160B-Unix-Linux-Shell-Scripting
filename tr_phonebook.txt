@@ -1,0 +1,7 @@
+#!/bin/bash
+# Name: Kevin Wong
+# Date: 11/6/21
+# File: tr_phonebook.txt
+# Desc: output from tr_strip.sh
+ 
+LizStachiw212-555-2298AliceChebba973-555-2015BarbaraSwingle201-555-9257LizStachiw212-555-2298SusanGoldberg201-555-7776SusanTopple212-555-4932TonyIannino973-555-1295ZippyPinhead555-666-7777WalterWhite123-321-4321JessePinkman999-888-5555SusanTopple212-555-4932

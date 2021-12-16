@@ -1,0 +1,125 @@
+#!/usr/bin/bash 
+# Name: kevin wong
+# File: to_hex_color
+# Date: Thu Dec  2 14:32:35 PST 2021 
+# Desc: accepts 3 arguments each within 0 to 255, and returns a hexadecimal color value
+
+countrun=1
+
+while :
+do
+
+	#------------------------------------
+	# block for reading in 3 color values
+	#------------------------------------
+	echo -e "Enter 3 color values between 0 and 255: \c"
+	read red green blue	
+	
+	# TEST 
+	# echo $red;
+	# echo $green;
+	# echo $blue;
+
+	#--------------------------------------------------------
+        # block for invalid entry: incorrect number of arguments
+        #--------------------------------------------------------
+	if [ -z "$red" ] || [ -z "$green" ] || [ -z "$blue"  ]
+        then
+                echo ""
+                echo "----------------------------------"
+		echo "ERROR: You're input has to have 3 arguments!"
+                echo "Correct usage: to_hex_color number1 number2 number3"
+                echo "	number# from 0 to 255"
+                echo "----------------------------------"
+       		echo ""
+		continue
+        fi
+ 
+	#--------------------------------
+	# block for invalid entry: letter
+	#--------------------------------
+	if [ $(echo $red | grep '[a-zA-Z]') ] || [ $(echo $green | grep '[a-zA-Z]') ] || [ $(echo $blue | grep '[a-zA-Z]') ] 
+	then
+		echo ""
+                echo "----------------------------------"
+		echo "ERROR: You're input has to be integers, no letters or special characters!"
+		echo "Correct usage: to_hex_color number1 number2 number3"
+		echo "	number# from 0 to 255"
+	        echo "----------------------------------"
+        	echo "" 
+		continue
+	fi
+	
+	#-----------------------------------------------
+        # block for invalid entry: numbers out of range 
+        #-----------------------------------------------
+        if [ "$red" -lt 0 -o "$red" -gt 255 ] || [ "$green" -lt 0 -o "$green" -gt 255 ] || [ "$blue" -lt 0 -o "$blue" -gt 255 ]
+        then
+		echo ""
+        	echo "----------------------------------"
+                echo "ERROR: You're color value(s) is(are) out of range!"
+                echo "Correct usage: to_hex_color number1 number2 number3"
+                echo "  number# from 0 to 255"
+		echo "----------------------------------"
+        	echo ""
+		continue
+        fi
+
+	#---------------------------------
+	# block for hexadecimal conversion
+	#---------------------------------
+	echo ""
+	echo "--------  RUN: $countrun  -----------------"
+	echo "Hexadecimal color value"
+	printf "RGB $red, $green, $blue is: "
+	echo -e "$((printf "#%*X" 2 $red) | tr ' ' '0')\c" 
+	echo -e "$((printf "%*X" 2 $green) | tr ' ' '0')\c"	
+	echo -e "$((printf "%*X" 2 $blue) | tr ' ' '0')\n"
+	echo "----------------------------------"
+	echo ""
+	(( countrun++  ))
+	
+	#----------------
+        # block for menu
+        #----------------
+	echo "Menu:"
+	echo 'Choose an option:'
+	echo '	1. Go again (y or yes)?'
+	echo '	2. Quit (q or quit)?'
+	echo -e "Please select one of the above: \c"
+	read choice
+	
+	while :
+	do
+		case "$choice"
+		in
+			[qQ])			echo "Finished!"
+						exit
+						;;
+
+			[qQ][uU][iI][tT])	echo "Finished!"
+						exit
+						;;
+
+		
+			[yY])			break
+						;;
+
+			[yY][eE][sS])		break
+						;;
+
+			*) 			echo ""
+						echo "Sorry I didn't understand \"$choice\", try again please"
+						echo ""
+						echo "Menu:"
+						echo 'Choose an option:'
+                				echo '	1. Go again (y or yes)?'
+                				echo '	2. Quit (q or quit)?'
+        					echo -e "Please select one of the above: \c"
+						read choice
+						continue
+						;;
+
+		esac
+	done
+done

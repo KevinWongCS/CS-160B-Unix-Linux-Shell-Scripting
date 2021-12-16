@@ -1,0 +1,69 @@
+---------------------------------------------
+# 1. Running test for valid(string)
+---------------------------------------------
+# test 1, argument '\TOPRAMEN'
+no
+
+# test 2, argument 'TOPRAMEN'
+yes
+
+# test 3, argument 'T$OPRAMEN'
+no
+
+# test 3, argument 'TOP_RAMEN'
+yes
+
+---------------------------------------------
+# 2. Running test for timeod()
+---------------------------------------------
+# test 1
+Sat, Nov 20, 2021 03:21:09 pm
+
+# test 2
+Sat, Nov 20, 2021 03:21:09 pm
+
+# test 3
+[02:02:00 kwong43@hills ~]$ ./timeod
+Sun, Nov 21, 2021 02:02:02 am
+
+# test 4
+[12:18:14 kwong43@hills ~]$ ./timeod
+Mon, Nov 22, 2021 00:18:23 am
+
+
+---------------------------------------------
+# 3. Running test for mysed(sed.sh, text file)
+---------------------------------------------
+# test 1
+# testing to see if text file has enough lines
+# 110 lines in oliver.txt
+
+deleting 10 lines from oliver.txt
+# updated: 100 lines in oliver.txt
+# done 
+
+# test 2
+# testing to see if text file has enough lines
+# 100 lines in oliver.txt
+
+deleting 10 lines from oliver.txt
+# updated: 90 lines in oliver.txt
+# done 
+
+---------------------------------------------
+# 4. Running test for itsayes(string)
+---------------------------------------------
+# test 1
+argument: Yes
+0
+# test 2
+argument: y
+0
+# test 3
+argument: NO
+1
+# test 4
+argument: N
+1
+
+done running test
